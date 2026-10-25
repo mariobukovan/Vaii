@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitify – Detail tréningového plánu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Fitify – domov"><span class="brand-icon">✚</span> Fitify</a>
+    <nav class="top-nav" aria-label="Hlavná navigácia">
+      <a href="index.html">Domov</a>
+      <a href="#cviky">Cviky</a>
+      <a class="active" href="plan.html">Plány</a>
+      <a href="#statistiky">Štatistiky</a>
+      <a href="#profil">Profil</a>
+    </nav>
+    <div class="header-icons"><span aria-label="Hľadať">⌕</span><span class="avatar" aria-label="Profil používateľa">M</span></div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <nav aria-label="Bočná navigácia">
+        <a href="index.html"><span>⌂</span> Domov</a>
+        <a href="#cviky"><span>✚</span> Cviky</a>
+        <a class="side-active" href="plan.html"><span>▦</span> Plány</a>
+        <a href="#statistiky"><span>▥</span> Štatistiky</a>
+        <a href="#profil"><span>♙</span> Profil</a>
+      </nav>
+    </aside>
+
+    <main class="main-content plan-content">
+      <a class="back-link" href="index.html">← Späť na plány</a>
+      <div class="plan-title-row">
+        <div><h1>Push Pull Legs</h1><p class="subtitle">Tréningový plán zameraný na rozvoj sily a svalovej hmoty.</p></div>
+      </div>
+      <div class="button-row">
+        <button class="button button-dark" type="button">✎ Upraviť plán</button>
+        <button class="button" type="button">＋ Pridať deň</button>
+        <button class="button" type="button">▤ Zmazať</button>
+      </div>
+
+      <nav class="tabs" aria-label="Sekcie tréningového plánu">
+        <a href="#prehlad">Prehľad</a><a class="tab-active" href="#dni">Dni plánu</a><a href="#statistiky">Štatistiky</a>
+      </nav>
+
+      <section class="plan-panel" id="dni">
+        <div class="day-tabs">
+          <button class="day-active" type="button">Pondelok – Push</button>
+          <button type="button">Streda – Pull</button>
+          <button type="button">Piatok – Legs</button>
+        </div>
+        <div class="exercise-list">
+          <div class="list-heading"><h2>Cviky v tomto dni</h2><span>5 cvikov</span></div>
+          <article class="exercise-row">
+            <span class="order">1</span><div class="exercise-thumb">▧</div><div class="exercise-details"><h3>Bench Press</h3><p>4 série × 8–12 opakovaní</p></div><span class="drag">⠿</span><button class="more" type="button" aria-label="Ďalšie možnosti pre Bench Press">⋮</button>
+          </article>
+          <article class="exercise-row">
+            <span class="order">2</span><div class="exercise-thumb">▧</div><div class="exercise-details"><h3>Overhead Press</h3><p>3 série × 8–12 opakovaní</p></div><span class="drag">⠿</span><button class="more" type="button" aria-label="Ďalšie možnosti pre Overhead Press">⋮</button>
+          </article>
+          <article class="exercise-row">
+            <span class="order">3</span><div class="exercise-thumb">▧</div><div class="exercise-details"><h3>Incline Dumbbell Press</h3><p>3 série × 10–12 opakovaní</p></div><span class="drag">⠿</span><button class="more" type="button" aria-label="Ďalšie možnosti pre Incline Dumbbell Press">⋮</button>
+          </article>
+          <article class="exercise-row">
+            <span class="order">4</span><div class="exercise-thumb">▧</div><div class="exercise-details"><h3>Lateral Raise</h3><p>3 série × 12–15 opakovaní</p></div><span class="drag">⠿</span><button class="more" type="button" aria-label="Ďalšie možnosti pre Lateral Raise">⋮</button>
+          </article>
+          <article class="exercise-row">
+            <span class="order">5</span><div class="exercise-thumb">▧</div><div class="exercise-details"><h3>Triceps Pushdown</h3><p>3 série × 10–12 opakovaní</p></div><span class="drag">⠿</span><button class="more" type="button" aria-label="Ďalšie možnosti pre Triceps Pushdown">⋮</button>
+          </article>
+          <button class="button add-exercise" type="button">＋ Pridať cvik</button>
+        </div>
+      </section>
+      <footer class="footer">Fitify | Tvoj cieľ. Tvoja motivácia.</footer>
+    </main>
+  </div>
+</body>
+</html>
