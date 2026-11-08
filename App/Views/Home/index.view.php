@@ -11,7 +11,7 @@
 <section class="feature-section">
     <h2>Hlavné sekcie</h2>
     <div class="feature-grid">
-        <a class="feature-card" href="#cviky"><span class="feature-icon">✚</span><h3>Cviky</h3><p>Katalóg cvikov</p></a>
+        <a class="feature-card" href="<?= $link->url('exercise.index') ?>"><span class="feature-icon">✚</span><h3>Cviky</h3><p>Katalóg cvikov</p></a>
         <a class="feature-card" href="<?= $link->url('plan.index') ?>"><span class="feature-icon">▦</span><h3>Tréningové plány</h3><p>Správa tréningových plánov</p></a>
         <a class="feature-card" href="#statistiky"><span class="feature-icon">▥</span><h3>Štatistiky</h3><p>Prehľad tréningového progresu</p></a>
         <a class="feature-card" href="#profil"><span class="feature-icon">♙</span><h3>Profil</h3><p>Používateľské nastavenia</p></a>
@@ -19,7 +19,7 @@
 </section>
 
 <section class="exercise-section">
-    <div class="section-heading"><h2>Najnovšie cviky</h2><a href="#cviky">Zobraziť všetky →</a></div>
+    <div class="section-heading"><h2>Najnovšie cviky</h2><a href="<?= $link->url('exercise.index') ?>">Zobraziť všetky →</a></div>
     <div class="exercise-preview-grid">
         <article class="exercise-preview"><div class="small-image">▧</div><div class="preview-info"><h3>Bench Press</h3><span class="tag">Prsia</span></div></article>
         <article class="exercise-preview"><div class="small-image">▧</div><div class="preview-info"><h3>Squat</h3><span class="tag">Nohy</span></div></article>

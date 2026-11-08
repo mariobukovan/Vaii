@@ -4,8 +4,10 @@
 /** @var \Framework\Auth\AppUser $user */
 /** @var \Framework\Support\LinkGenerator $link */
 
-// URL aktuálnej stránky (aktuálny kontrolér + akcia) – slúži na zvýraznenie aktívnej položky v menu
-$current = $link->url([]);
+// URL aktuálneho kontroléra – slúži na zvýraznenie aktívnej položky v menu
+// (napr. "Cviky" je aktívne na zozname aj na formulároch ?c=exercise&a=add/edit)
+$current = $link->url([]) . '&';
+$isActive = fn(string $controller): bool => str_starts_with($current, $link->url($controller . '.index') . '&');
 ?>
 <!DOCTYPE html>
 <html lang="sk">
@@ -16,14 +18,15 @@ $current = $link->url([]);
     <link rel="icon" type="image/png" sizes="32x32" href="<?= $link->asset('favicons/favicon-32x32.png') ?>">
     <link rel="shortcut icon" href="<?= $link->asset('favicons/favicon.ico') ?>">
     <link rel="stylesheet" href="<?= $link->asset('css/style.css') ?>">
+    <script src="<?= $link->asset('js/script.js') ?>" defer></script>
 </head>
 <body>
 <header class="topbar">
     <a class="brand" href="<?= $link->url('home.index') ?>" aria-label="Fitify – domov"><span class="brand-icon">✚</span> Fitify</a>
     <nav class="top-nav" aria-label="Hlavná navigácia">
-        <a class="<?= $current == $link->url('home.index') ? 'active' : '' ?>" href="<?= $link->url('home.index') ?>">Domov</a>
-        <a href="#cviky">Cviky</a>
-        <a class="<?= $current == $link->url('plan.index') ? 'active' : '' ?>" href="<?= $link->url('plan.index') ?>">Plány</a>
+        <a class="<?= $isActive('home') ? 'active' : '' ?>" href="<?= $link->url('home.index') ?>">Domov</a>
+        <a class="<?= $isActive('exercise') ? 'active' : '' ?>" href="<?= $link->url('exercise.index') ?>">Cviky</a>
+        <a class="<?= $isActive('plan') ? 'active' : '' ?>" href="<?= $link->url('plan.index') ?>">Plány</a>
         <a href="#statistiky">Štatistiky</a>
         <a href="#profil">Profil</a>
     </nav>
@@ -33,9 +36,9 @@ $current = $link->url([]);
 <div class="app-layout">
     <aside class="sidebar">
         <nav aria-label="Bočná navigácia">
-            <a class="<?= $current == $link->url('home.index') ? 'side-active' : '' ?>" href="<?= $link->url('home.index') ?>"><span>⌂</span> Domov</a>
-            <a href="#cviky"><span>✚</span> Cviky</a>
-            <a class="<?= $current == $link->url('plan.index') ? 'side-active' : '' ?>" href="<?= $link->url('plan.index') ?>"><span>▦</span> Plány</a>
+            <a class="<?= $isActive('home') ? 'side-active' : '' ?>" href="<?= $link->url('home.index') ?>"><span>⌂</span> Domov</a>
+            <a class="<?= $isActive('exercise') ? 'side-active' : '' ?>" href="<?= $link->url('exercise.index') ?>"><span>✚</span> Cviky</a>
+            <a class="<?= $isActive('plan') ? 'side-active' : '' ?>" href="<?= $link->url('plan.index') ?>"><span>▦</span> Plány</a>
             <a href="#statistiky"><span>▥</span> Štatistiky</a>
             <a href="#profil"><span>♙</span> Profil</a>
         </nav>
